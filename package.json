@@ -1,0 +1,20 @@
+{
+  "name": "mon-catalogue-de-piece",
+  "version": "1.0.0",
+  "description": "L'utilisateur peut collectionner des pièces ou des médailles et ainsi savoir ce qu'il possède dans sont inventaire",
+  "homepage": "https://github.com/HamzaMeneceur/mon-catalogue-de-piece#readme",
+  "bugs": {
+    "url": "https://github.com/HamzaMeneceur/mon-catalogue-de-piece/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HamzaMeneceur/mon-catalogue-de-piece.git"
+  },
+  "license": "ISC",
+  "author": "HamzaMeneceur",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
