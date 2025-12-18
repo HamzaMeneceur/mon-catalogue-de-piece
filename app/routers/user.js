@@ -3,6 +3,6 @@ import userController from '../controllers/user.js'
 
 const userRouter = Router()
 
-// userRouter.get("/all", userController.getAll)
+userRouter.post("/signup/new", userController.hashUser)
 
 export default userRouter;

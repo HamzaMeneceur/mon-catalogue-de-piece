@@ -14,6 +14,17 @@ const userDatamapper = {
                 result = await client.query(sqlQuery)
             }
             return result
+        },
+        async newUser(data) {
+            let result
+            try {
+                const sqlQuery = 'INSERT INTO "user"(pseudo,email, password) VALUES ($1,$2,$3);';
+                result = await client.query(sqlQuery, data);
+            }
+            catch(err) {
+                console.log(err)
+            }
+            return result
         }
 }
 export default userDatamapper

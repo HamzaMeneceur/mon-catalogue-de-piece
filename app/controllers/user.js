@@ -1,14 +1,20 @@
-import userDatamapper from "../dataMappers/user.js"
+import userDatamapper from "../dataMappers/user.js";
+import hashService from "../services/bcrypt.js";
 
 const userController = {
-    async getAll(req,res,next) {
-        let result
+    async hashUser(req,res,next) {
+        let userInfo;
             try {
-                result = await userDatamapper.findAll();
-                res.status(200).json(result)
+                const { pseudo, email, password } = req.body
+                const passHash = await hashService.hashPass(password)
+                userInfo = [pseudo,email,passHash]
+                await userDatamapper.newUser(userInfo)
+                res.status(201).json("done")
             }
             catch {
-                res.status(500).json(result)
+                console.log(userInfo,req.body)
+                
+                res.status(500).json('nothing', req.params)
                 console.log('Une erreur est survenu')
             }
         }
